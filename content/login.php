@@ -1,6 +1,6 @@
 <?php
 // koneksi database
-$conn = mysqli_connect("localhost:3306", "root", "", "reservasi");
+$conn = mysqli_connect("localhost:3306", "root", "", "db_reservasi");
 
 // cek koneksi
 if (!$conn) {

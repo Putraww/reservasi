@@ -42,8 +42,8 @@
                     <a class="btn btn-secondary-outline"><?php echo $_SESSION['nama_lengkap']; ?></a><a
                         class="btn btn-danger ms-3" href="?pg=logout">Logout</a>
                 <?php } else { ?>
-                    <a class="btn btn-secondary-outline text-dark nav-link " href="?pg=signin">Sign
-                        In</a><a class="btn btn-secondary-outline text-dark nav-link" href="?pg=signup">Sign Up</a>
+                    <a class="btn btn-secondary-outline text-dark nav-link " href="?pg=login">Login</a>
+                    <a class="btn btn-secondary-outline text-dark nav-link" href="?pg=registrasi">Registrasi</a>
                 </div>
             <?php } ?>
         </div>

@@ -2,7 +2,7 @@
 $host_koneksi = "localhost:3306";
 $user_koneksi = "root";
 $password_koneksi = "";
-$database_koneksi = "reservasi";
+$database_koneksi = "db_reservasi";
 
 $koneksi = mysqli_connect(
     $host_koneksi,

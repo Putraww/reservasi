@@ -1,6 +1,6 @@
 <?php
 // koneksi database
-$conn = mysqli_connect("localhost:3306", "root", "", "reservasi");
+$conn = mysqli_connect("localhost:3306", "root", "", "db_reservasi");
 
 // cek koneksi
 if (!$conn) {
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
     // simpan data ke database
     $query = "INSERT INTO user (nama_lengkap, email, password) VALUES ('$nama_lengkap', '$email', '$password')";
     mysqli_query($conn, $query);
-    header('location:?pg=signin');
+    header('location:?pg=login');
   }
 }
 echo `<script>alert('Registrasi berhasil!');</script>`;
