@@ -1,12 +1,12 @@
 <?php
 include "admin/koneksi/koneksi.php";
 
-$querry = mysqli_query($koneksi, "SELECT reservasi.*, kendaraan.nama_kendaraan FROM reservasi JOIN kendaraan ON reservasi.id_kendaraan = kendaraan.id ORDER BY reservasi.id DESC");
+$querry = mysqli_query($koneksi, "SELECT booking.*, kendaraan.nama_kendaraan FROM booking JOIN kendaraan ON booking.id_kendaraan = kendaraan.id ORDER BY booking.id DESC");
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    $delete = mysqli_query($koneksi, "DELETE FROM reservasi WHERE id ='$id'");
-    header('location:?pg=reservasi&hapus=berhasil');
+    $delete = mysqli_query($koneksi, "DELETE FROM booking WHERE id ='$id'");
+    header('location:?pg=booking&hapus=berhasil');
 
 }
 
@@ -19,22 +19,22 @@ if (isset($_POST['simpan'])) {
     $tanggal = $_POST['tanggal'];
     $waktu = $_POST['waktu'];
     $deskripsi = $_POST['deskripsi'];
-    //MASUKKAN KE DALAM TABEL reservasi (FIELD YANG AKAN DI MASUKKAN)
+    //MASUKKAN KE DALAM TABEL booking (FIELD YANG AKAN DI MASUKKAN)
     //VALUE (INPUTAN MASING-MASING KOLOM)
 
-    $insert = mysqli_query($koneksi, "INSERT INTO reservasi (nama, email, alamat, telp, id_kendaraan, tanggal, waktu, deskripsi ) VALUES ('$nama','$email','$alamat','$telp','$id_kendaraan','$tanggal','$waktu','$deskripsi')");
+    $insert = mysqli_query($koneksi, "INSERT INTO booking (nama, email, alamat, telp, id_kendaraan, tanggal, waktu, deskripsi ) VALUES ('$nama','$email','$alamat','$telp','$id_kendaraan','$tanggal','$waktu','$deskripsi')");
 
-    header('Location: ?pg=done-reservasi&pesan=tambah-berhasil');
+    header('Location: ?pg=done-booking&pesan=tambah-berhasil');
 
 }
-$queryReservasi = mysqli_query($koneksi, "SELECT * FROM reservasi ORDER BY id DESC")
+$querybooking = mysqli_query($koneksi, "SELECT * FROM booking ORDER BY id DESC")
 
     ?>
 <div class="py-5">
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <form action="" method="post" id="reservasi">
+                <form action="" method="post" id="booking">
                     <h2 align="center" style="color:red">Data Diri & Booking Service</h2><br><br>
                     <div class="form-group">
                         <div class="row">
